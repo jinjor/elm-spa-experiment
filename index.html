@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Main</title>
+	<style>html,head,body { padding:0; margin:0; }
+	body { font-family: calibri, helvetica, arial, sans-serif; }
+	.page {
+		display:none;
+	}
+	.page.active {
+		display:block;
+	}
+	</style>
+</head>
+<body>
+<a href="#page1">Counter</a>
+<a href="#page2">Text Field</a>
+<div class="page" id="page1"></div>
+<div class="page" id="page2"></div>
+<script src="./elm.js"></script>
+<script type="text/javascript">
+	window.onhashchange = e => {
+		for(let e of document.getElementsByClassName("page")) {
+			e.classList.remove("active");
+		}
+		const page = document.querySelector(location.hash);
+		if(page) {
+			page.classList.add("active");
+		}
+	};
+	Elm.Page1.embed(document.getElementById("page1"));
+	Elm.Page2.embed(document.getElementById("page2"));
+</script>
+</body>
+</html>
