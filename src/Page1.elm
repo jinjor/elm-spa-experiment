@@ -1,7 +1,6 @@
 module Page1 exposing (..)
 
 import Html exposing (..)
-import Html.Attributes exposing (..)
 import Html.Events exposing (..)
 
 
@@ -48,7 +47,7 @@ update msg model =
 
 view : Model -> Html Msg
 view model =
-    div [ class "page1" ]
+    div []
         [ button [ onClick Decrement ] [ text "-" ]
         , div [] [ text (toString model) ]
         , button [ onClick Increment ] [ text "+" ]

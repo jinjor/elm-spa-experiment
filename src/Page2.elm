@@ -45,7 +45,7 @@ update msg model =
 
 view : Model -> Html Msg
 view model =
-    div [ class "page2" ]
+    div []
         [ input [ placeholder "Text to reverse", onInput Change ] []
         , div [] [ text (String.reverse model.content) ]
         ]
