@@ -1,8 +1,6 @@
 {
-  "devDependencies": {
-    "elm": "^0.18.0"
-  },
+  "devDependencies": {},
   "scripts": {
-    "build": "elm make src/Page1.elm src/Page2.elm --warn --output=elm.js"
+    "build": "elm make src/Page1.elm src/Page2.elm --output=elm.js"
   }
 }

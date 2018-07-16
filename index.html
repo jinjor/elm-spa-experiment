@@ -13,8 +13,8 @@
 <body>
 <a href="#page1">Counter</a>
 <a href="#page2">Text Field</a>
-<div class="page" id="page1"></div>
-<div class="page" id="page2"></div>
+<div class="page" id="page1"><div></div></div>
+<div class="page" id="page2"><div></div></div>
 <script src="./elm.js"></script>
 <script type="text/javascript">
 	window.onhashchange = e => {
@@ -26,8 +26,12 @@
 			page.classList.add("active");
 		}
 	};
-	Elm.Page1.embed(document.getElementById("page1"));
-	Elm.Page2.embed(document.getElementById("page2"));
+	Elm.Page1.init({
+		node: document.getElementById("page1").firstChild
+	});
+	Elm.Page2.init({
+		node: document.getElementById("page2").firstChild
+	});
 </script>
 </body>
 </html>

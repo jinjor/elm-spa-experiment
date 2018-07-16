@@ -1,13 +1,14 @@
 module Page2 exposing (..)
 
+import Browser
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Html.Events exposing (..)
 
 
-main : Program Never Model Msg
+main : Program () Model Msg
 main =
-    Html.beginnerProgram { model = model, view = view, update = update }
+    Browser.sandbox { init = init, view = view, update = update }
 
 
 
@@ -19,8 +20,8 @@ type alias Model =
     }
 
 
-model : Model
-model =
+init : Model
+init =
     { content = "" }
 
 
